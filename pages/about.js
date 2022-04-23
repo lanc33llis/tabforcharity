@@ -5,6 +5,9 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react'
 
 import AnimatedText from 'react-animated-text-content'
+import React from 'react';
+import Style from 'style-it';
+import { render } from 'react-dom';
 
 const hcs = [
   "Ukraine.",
@@ -26,44 +29,39 @@ const About = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.hero}>
-        <div className={styles.left}>
-          <h1>
-             <span className={styles.highlight}>Click on Start Donating</span>
-          </h1>
-          <h1>
-            To help&nbsp;
-            <AnimatedText 
-              type="words"
-              animationType='fadeIn'
-              animationDuration={1000}
-              animationDelay={0}
-              className={styles.ai}
-            >
-              {hcs[i]}
-            </AnimatedText>
-          </h1>
-          <h2>
-            Sign up now to help make an impact for tomorrow.
-          </h2>
-        </div>
-        <div className={styles.right}>
-          <div className={styles["right-bg"]} />
-        </div>
-      </div>
-      <div className={styles.content}>
-        <h3>
+
+      <div className={styles.about}>
+        <h1>
           About
-        </h3>
+        </h1>
         <p>
-          Tab for Charity(TAC) mines crypto in your browser your CPU is idling.
-        </p>
-        <p>       
-          TAC mines monero, a privacy-focused cryptocurrency, to donate directly to 
-          non-profits while keeping your information private and discrete. 
-        </p>
+          Tab for charity is a website used to mine and donate crypto currency
+          to causes all over the world. 
+          </p>
+          <p>
+          Crypto is getting more and more popular everyday.
+          </p>
+          <p>
+          Now is the time to seize this opportunity and use it to change the world.
+          </p>
+          <p>
+            Click on start donating to register and keep up with your mining! 
+          </p>
+        
       </div>
+    <div className={styles.codeInfo}>
+      <h2>
+        Language used to create this
+      </h2> 
     </div>
+    <div className={styles.devInfo}>
+      <h2>
+        Dev Info
+      </h2>
+    </div>
+    </div>
+    
+   
   )
 }
 
