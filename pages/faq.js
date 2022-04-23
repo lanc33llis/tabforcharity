@@ -1,4 +1,4 @@
-import styles from '../styles/About.module.sass'
+import styles from '../styles/Faq.module.sass'
 
 import Image from 'next/image'
 
@@ -14,7 +14,7 @@ const hcs = [
   "Humanity."
 ]
 
-const About = () => {
+const Faq = () => {
   const [i, setI] = useState(0)
 
   useEffect(() => {
@@ -29,10 +29,10 @@ const About = () => {
       <div className={styles.hero}>
         <div className={styles.left}>
           <h1>
-             <span className={styles.highlight}>Click on Start Donating</span>
+            The tab built for <span className={styles.highlight}>humanity.</span>
           </h1>
           <h1>
-            To help&nbsp;
+            Crypto for&nbsp;
             <AnimatedText 
               type="words"
               animationType='fadeIn'
@@ -44,27 +44,31 @@ const About = () => {
             </AnimatedText>
           </h1>
           <h2>
-            Sign up now to help make an impact for tomorrow.
+            Use your idle tabs to donate to charity by mining crypto.
           </h2>
         </div>
         <div className={styles.right}>
           <div className={styles["right-bg"]} />
         </div>
       </div>
-      <div className={styles.content}>
+      <div className={styles.faq}>
         <h3>
-          About
+        Frequently Asked Questions 
         </h3>
+        <h4 class = "faq-heading">FAQ'S</h4>
+        <section class = "faq-container">
+            <div class="faq-one">
+                <h4 class = "faq-page">What is TAC?</h4>
+                <div class="faq-body">
+                    <p>TAC is a website used to mine crypto for donations.</p>
+                </div>
+                </div>
+                </section>
         <p>
-          Tab for Charity(TAC) mines crypto in your browser your CPU is idling.
-        </p>
-        <p>       
-          TAC mines monero, a privacy-focused cryptocurrency, to donate directly to 
-          non-profits while keeping your information private and discrete. 
         </p>
       </div>
     </div>
   )
 }
 
-export default About
+export default Faq
