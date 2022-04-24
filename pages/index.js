@@ -51,15 +51,20 @@ const Index = () => {
           <div className={styles["right-bg"]} />
         </div>
       </div>
-      <div className={styles.content}>
-        <h3>
-          How does it work?
-        </h3>
-        <p>
-          Tab for Charity(TAC) mines crypto in your browser your CPU is idling.
-          TAC mines monero, a privacy-focused cryptocurrency, to donate directly to 
-          non-profits while keeping your information private and discrete. 
-        </p>
+      <h3 className={styles["content-header"]}>
+        Idle time is up time for charity
+      </h3>
+      <div className={styles["uptime"]}>
+        <div className={styles.left}>
+          <p>
+            Tab for Charity (TFC) mines crypto in your browser your CPU is idling.
+            TFC mines monero, a privacy-focused cryptocurrency, to donate directly to 
+            non-profits while keeping your information private and discrete. 
+          </p>
+        </div>
+        <div className={styles.right}>
+          <Image src="/arrowup.svg" width={256} height={256} alt="arrow up"/>
+        </div>
       </div>
     </div>
   )

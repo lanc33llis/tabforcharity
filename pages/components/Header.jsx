@@ -25,7 +25,7 @@ const Header = () => {
                 FAQ
               </a>
             </Link>
-            <Link href="/dashboard" passhref>
+            <Link href="/api/login" passhref>
               <a className={styles["dashboard-link"]} >
                 Start Donating
               </a>
