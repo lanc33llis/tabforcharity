@@ -1,0 +1,56 @@
+.container
+  display: flex
+  width: 100%
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  p
+    width: auto
+
+.popup
+  display: flex
+  width: 25%
+  height: 25%
+  background: white
+  border-radius: 10px
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+  position: absolute
+  top: 37.5%
+  left: 37.5%
+  flex-direction: column
+  justify-content: center
+  text-align: center
+  h3
+    margin: 1em
+    font-size: 1.15em
+  p
+    margin: 1em
+    font-size: 1em
+
+.content
+  margin-top: 300px
+  z-index: 1
+  .stats
+    display: flex
+    p
+      padding: 1em
+  .settings
+    button
+      margin: 1em
+      padding: 1em 3em
+      border-radius: 10px
+      border: none
+      background: darken(gold, 3%)
+      color: white
+      font-size: 1.15em
+      cursor: pointer
+      transition: all .2s ease-in-out
+      &:hover
+        background: black
+        color: white
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+  p
+    margin: 0em

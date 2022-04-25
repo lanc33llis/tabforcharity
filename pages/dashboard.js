@@ -11,6 +11,9 @@ const Dashboard = () => {
   return (
     <div className={styles.container}>
       <Miner/>
+      <h1>
+        Hello, {user?.name}
+      </h1>
     </div>
   )
 }
