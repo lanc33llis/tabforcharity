@@ -9,7 +9,7 @@ const auth = nextConnect()
       secret: process.env.TOKEN_SECRET,
       cookie: {
         maxAge: 60 * 60 * 8, // 8 hours,
-        httpOnly: true,
+        httpOnly: process.env.NODE_ENV === 'production' ? false : true,
         secure: process.env.NODE_ENV === 'production',
         path: '/',
         sameSite: 'lax',
