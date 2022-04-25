@@ -4,7 +4,7 @@ const Faq = () => {
 
   return (
     <div className={styles.container}>
-
+      
     </div>
   )
 }

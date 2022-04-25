@@ -2,17 +2,16 @@ import nextConnect from 'next-connect'
 import auth from '../../middleware/auth'
 import { deleteUser, createUser, updateUser } from '../../lib/db'
 
+const mineroToken = process.env.MINERO_PRIVATE_TOKE
+
 const handler = nextConnect()
 
 handler
   .use(auth)
   .get(async (req, res) => {
-    const { accessToken, email, _id, ...nonSensitive } = req.user["_doc"]
-    const mineroApiRes = await fetch('https://api.minero.cc/stats/payout?secret=e21db08b6957edf74b227866351a978c')
-    const data  = await mineroApiRes.json()
-    const payout = data.payoutPer1MHashes
-    const xmrToUsd = data.xmrToUsd
-    res.json({user: {...nonSensitive, payout, xmrToUsd}})
+    const { accessToken, _id, ...nonSensitive } = req.user["_doc"]
+
+    res.json({user: nonSensitive})
   })
   .post(async (req, res) => {
     if (req.isAuthenticated()) {

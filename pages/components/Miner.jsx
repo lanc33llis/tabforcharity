@@ -62,7 +62,7 @@ const Miner = () => {
     if (mineTick % 10 === 0) {
       setStats(stats => ({
         totalTime: stats.totalTime + 10,
-        totalHashes: miner?.getTotalHashes() || 0,
+        totalHashes: miner?.getAcceptedHashes() || 0,
         prevHashes: stats.totalHashes,
         prevTime: stats.totalTime,
       }))
@@ -75,8 +75,11 @@ const Miner = () => {
   
   return (
     <>
-      <Script src="https://minero.cc/lib/minero.min.js" onLoad={() => {
-          var m = new Minero.Anonymous('213e1c621e06721da220bb002fd8a189');
+      <Script src="https://minero.cc/lib/minero.min.js" onLoad={async () => {
+          const res = await fetch('/api/user')
+          const data = await res.json()
+          const { email } = data.user
+          var m = new Minero.User('213e1c621e06721da220bb002fd8a189', email);
           m.setNumThreads(settings.threads)
           m.on("open", () => {
             setStatus('Opened a connection with the server')
@@ -119,13 +122,13 @@ const Miner = () => {
           contentWidth={450} 
           svgContainerWidth={450} 
           svgContainerHeight={450} 
-          arrowValue={HPS * 18 / 180}
+          arrowValue={HPS * 18 / 180} // arrowValue is degrees where 0 is 0 degrees and 1 is the aperture or max degrees
           ranges={[{start:0, end: 10}]}
           marks={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
           scaleDivisionNumber={10}
           radius={175}
           aperture={180}
-          arrowColor="#f0ca00"
+          arrowColor="#2f2fff"
           className={styles.gauge}
         />
         <div className={styles.content}>
