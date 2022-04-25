@@ -7,6 +7,8 @@ const handler = nextConnect()
 handler
   .use(auth)
   .get((req, res, next) => {
+    console.log("hello, vercel")
+    console.log(req?.user)
     if (req.isAuthenticated()) {
       res.redirect('/dashboard')
     } else {
